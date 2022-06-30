@@ -1,0 +1,59 @@
+{% extends 'student/dashboard_base.html' %}
+
+{% block body %}
+    <h2 style="color: blue;">Student Dashboard</h2>
+   <div class="row" style="border-bottom: solid rgb(83, 83, 248); margin-top: 20px;">
+       <div class="col">
+            <img class="rounded-circle account-img dp" src="{{ user.student.profilePic.url }}" >
+            <h3 style="color: white;">{{ user.username }}</h3>
+       </div>
+       <div class="col" style="color: white; text-align: justify;">
+            <h4 style="color: #c2bdbd;">School: {{ user.student.school }}</h4>
+            <h4 style="color: #c2bdbd;">Course: {{ user.student.course }}</h4>
+            <h4 style="color: #c2bdbd;">Name: {{ user.first_name }} {{ user.last_name }}</h4>
+       </div>
+       <div class="col" style="color: white; text-align: justify;">
+        <h4 style="color: white;">Field: {{ user.student.field }}</h4>
+        <h4 style="color: white;">{{ user.student.headline }}</h4>
+   </div>
+   </div>
+   <h3 style="color: blue;" style="text-align: center;">Available Internships</h3>
+   <div style="overflow-x:auto; overflow-y: auto;">
+        <h4 style="color: #09c009;">Total: {{jobs|length}}</h4>
+        <table class="table table-success table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Company Name</th>
+                        <th scope="col">Job Title</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Location</th>
+                        <th scope="col"></th>
+                    <tbody>
+                        {% for job in jobs %}
+                            <tr>
+                                <td>{{ job.company.user.username }}</td>
+                                <td>{{ job.title }}</td>
+                                <td>{{ job.company.user.email }}</td>
+                                <td>{{ job.company.country }} {{ job.company.city }}</td>
+                                <td><a class="btn btn-primary" href="{% url 'view-job' job.pk %}" role="button">View</a></td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </thead>
+
+        </table>
+</div>
+
+{% endblock %}
+<style>
+    .dp{
+        width: 150px; 
+        height: 150px;
+    }
+     @media screen and (max-width: 600px) {
+      .dp{
+          width: 100px;
+          height: 100px
+      }
+     }
+</style>
