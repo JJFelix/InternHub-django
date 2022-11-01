@@ -11,11 +11,10 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
-import django_heroku
+
 import os
 
 
-django_heroku.settings(locals())
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -142,3 +141,6 @@ LOGIN_URL = 'home'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #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 == git hub access token
+
+import django_heroku
+django_heroku.settings(locals())
