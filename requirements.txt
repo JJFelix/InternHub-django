@@ -34,10 +34,12 @@ defusedxml==0.7.1
 distlib==0.3.4
 distro==1.7.0
 distro-info===1.1build1
+dj-database-url==1.0.0
 Django==3.2.12
 django-bootstrap-datepicker-plus==4.0.0
 django-cors-headers==3.13.0
 django-crispy-forms==1.14.0
+django-on-heroku==1.1.2
 djangorestframework==3.14.0
 dnspython==2.2.1
 docker==5.0.3
@@ -129,6 +131,7 @@ prometheus-client==0.14.1
 prompt-toolkit==3.0.29
 protobuf==3.12.4
 psutil==5.9.0
+psycopg2-binary==2.9.5
 ptyprocess==0.7.0
 pure-eval==0.2.2
 pycairo==1.20.1
@@ -196,6 +199,7 @@ wcwidth==0.2.5
 webencodings==0.5.1
 websocket-client==1.2.3
 Werkzeug==1.0.1
+whitenoise==6.2.0
 widgetsnbextension==3.6.0
 WTForms==3.0.1
 xdg==5
