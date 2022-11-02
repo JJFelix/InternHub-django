@@ -35,6 +35,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic',
     'Intern.apps.InternConfig',
     'bootstrap_datepicker_plus',
     'crispy_forms',
